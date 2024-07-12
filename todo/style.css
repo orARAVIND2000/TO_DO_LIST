@@ -66,3 +66,8 @@ li .delete {
 li .checkbox {
     margin-right: 10px;
 }
+
+.taskContainer{
+    height: 300px;
+    overflow-y: auto;
+}
