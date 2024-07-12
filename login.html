@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login Page</title>
-<style>
-    body {
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <style>
+      body {
         font-family: Arial, sans-serif;
         background-color: #f0f0f0;
         display: flex;
@@ -13,19 +13,20 @@
         align-items: center;
         height: 100vh;
         margin: 0;
-    }
-    .container {
+      }
+      .container {
         background-color: #fff;
         padding: 20px;
         border-radius: 8px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         width: 300px;
-    }
-    h2 {
+      }
+      h2 {
         text-align: center;
         margin-bottom: 20px;
-    }
-    input[type="text"], input[type="password"] {
+      }
+      input[type="text"],
+      input[type="password"] {
         width: 100%;
         padding: 10px;
         margin: 8px 0;
@@ -33,9 +34,9 @@
         border: 1px solid #ccc;
         border-radius: 4px;
         font-size: 16px;
-    }
-    input[type="submit"] {
-        background-color: #4CAF50;
+      }
+      input[type="submit"] {
+        background-color: #4caf50;
         color: white;
         padding: 10px 20px;
         border: none;
@@ -43,58 +44,75 @@
         cursor: pointer;
         font-size: 16px;
         width: 100%;
-    }
-    input[type="submit"]:hover {
+      }
+      input[type="submit"]:hover {
         background-color: #45a049;
-    }
-    .error {
+      }
+      .error {
         color: red;
         font-size: 14px;
         margin-top: 5px;
-    }
-</style>
-</head>
-<body>
-<div class="container">
-    <h2>Login</h2>
-    <form id="loginForm" onsubmit="return validateForm()" action="todo/to.html">
-        <input type="text" id="username" name="username" placeholder="Username" required>
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Login</h2>
+      <form
+        id="loginForm"
+        onsubmit="return validateForm()"
+        action="todo/to.html"
+      >
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="Username"
+          required
+        />
         <div id="usernameError" class="error"></div>
-        <input type="password" id="password" name="password" placeholder="Password" required>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Password"
+          required
+        />
         <div id="passwordError" class="error"></div>
-        <input type="submit" value="Login">
-    </form>
-</div>
+        <input type="submit" value="Login" />
+      </form>
+    </div>
 
-<script>
-function validateForm() {
-    var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
-    var usernameError = document.getElementById("usernameError");
-    var passwordError = document.getElementById("passwordError");
+    <script>
+      function validateForm() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        var usernameError = document.getElementById("usernameError");
+        var passwordError = document.getElementById("passwordError");
 
-    // Username validation: should contain both letters and numbers
-    var usernameRegex = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{4,}$/;
-    if (!usernameRegex.test(username)) {
-        usernameError.textContent = "Username must contain both letters and numbers";
-        return false;
-    } else {
-        usernameError.textContent = "";
-    }
+        // Username validation: should contain both letters and numbers
+        var usernameRegex = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{4,}$/;
+        if (!usernameRegex.test(username)) {
+          usernameError.textContent =
+            "Username must contain both letters and numbers";
+          return false;
+        } else {
+          usernameError.textContent = "";
+        }
 
-    // Password validation: minimum 8 characters with letters, numbers, and special characters
-    var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-    if (!passwordRegex.test(password)) {
-        passwordError.textContent = "Password must be at least 8 characters long, including uppercase, lowercase, numbers, and special characters (@$!%*?&)";
-        return false;
-    } else {
-        passwordError.textContent = "";
+        // Password validation: minimum 8 characters with letters, numbers, and special characters
+        var passwordRegex =
+          /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        if (!passwordRegex.test(password)) {
+          passwordError.textContent =
+            "Password must be at least 8 characters long, including uppercase, lowercase, numbers, and special characters (@$!%*?&)";
+          return false;
+        } else {
+          passwordError.textContent = "";
+        }
 
-    }
-
-    return true;
-}
-</script>
-
-</body>
+        return true;
+      }
+    </script>
+  </body>
 </html>
